@@ -22,11 +22,11 @@ var bio = {
   "welcomeMessage": "Hey there amigos!",
   "skills": ["JavaScript", "Effective Writing", "Creativity"],
   "image": "images/me.jpg",
-  "display": function() {
+  "display": function() {//appends biopic, name, skills, and contact information to header as well as the contact information to the footer. 
     var formattedBioPic = HTMLbioPic.replace("%data%", bio.image);
     $("#header").append(formattedBioPic);
 
-    var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);//TODO: each of these needs to replace "#" with a link to the appropriate site.
     $("#header").append(formattedHeaderName);
     if (bio.skills.length > 0) {
       $("#header").append(HTMLskillsStart);
@@ -39,17 +39,32 @@ var bio = {
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts["mobile"]);
     $("#topContacts").append(formattedMobile);
 
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts["mobile"]);
+    $("#footerContacts").append(formattedMobile);
+
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts["email"]);
     $("#topContacts").append(formattedEmail);
+
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts["email"]);
+    $("#footerContacts").append(formattedEmail);
 
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts["twitter"]);
     $("#topContacts").append(formattedTwitter);
 
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts["twitter"]);
+    $("#footerContacts").append(formattedTwitter);
+
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts["github"]);
     $("#topContacts").append(formattedGithub);
 
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts["github"]);
+    $("#footerContacts").append(formattedGithub);
+
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts["location"]);
     $("#topContacts").append(formattedLocation);
+
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts["location"]);
+    $("#footerContacts").append(formattedLocation);
   }
 }
 bio.display();
