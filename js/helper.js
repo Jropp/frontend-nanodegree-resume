@@ -178,11 +178,9 @@ function initializeMap() {
 
 
     // hmmmm, I wonder what this is about...
-    google.maps.event.addListener(marker, 'hover', function() {
+    google.maps.event.addListener(marker, 'click', function() {
 
       infoWindow.open(map, marker);
-
-      //TODO: is there anything else to do with this? 
   
     });
 
