@@ -168,6 +168,6 @@ var projects = {
             }
         });
     }
-}
+};
 projects.display();
 $("#mapDiv").append(googleMap);
