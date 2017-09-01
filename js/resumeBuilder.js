@@ -10,42 +10,36 @@ var bio = {
     },
     "welcomeMessage": "Hey there amigos!",
     "skills": ["JavaScript", "Effective Writing", "Creativity"],
-    "image": "images/me.jpg",
-    "display": function() {
-        var formattedBioPic = HTMLbioPic.replace("%data%", bio.image);
+    "biopic": "images/me.jpg",
+    "display": function() {//function to display all the bio items
+        var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
         $("#header").append(formattedBioPic);
         var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
         $("#header").append(formattedHeaderName);
+        var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
+        $("#header").append(formattedHeaderRole);
+        var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+        $("#header").append(formattedWelcomeMessage);
         if (bio.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
         }
-        var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
-        $("#skills").append(formattedSkills);
-        var formattedfooterSkills = HTMLskills.replace("%data%", bio.skills[1]);
-        $("#skills").append(formattedfooterSkills);
+        bio.skills.forEach(function(skill) {
+            var formattedSkills = HTMLskills.replace("%data%", skill);
+            $("#skills").append(formattedSkills);
+        });
         var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-        $("#topContacts").append(formattedMobile);
-        var formattedfooterMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-        $("#footerContacts").append(formattedfooterMobile);
+        $("#topContacts, #footerContacts").append(formattedMobile);//to display mobile number
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-        $("#topContacts").append(formattedEmail);
-        var formattedfooterEmail = HTMLemail.replace("%data%", bio.contacts.email);
-        $("#footerContacts").append(formattedfooterEmail);
+        $("#topContacts, #footerContacts").append(formattedEmail);//to display email address
         var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-        $("#topContacts").append(formattedTwitter);
-        var formattedfooterTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-        $("#footerContacts").append(formattedfooterTwitter);
+        $("#topContacts, #footerContacts").append(formattedTwitter);//to display twitter handle
         var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-        $("#topContacts").append(formattedGithub);
-        var formattedfooterGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-        $("#footerContacts").append(formattedfooterGithub);
+        $("#topContacts, #footerContacts").append(formattedGithub);//to display to display gitHub Handle
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-        $("#topContacts").append(formattedLocation);
-        var formattedfooterLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-        $("#footerContacts").append(formattedfooterLocation);
+        $("#topContacts, #footerContacts").append(formattedLocation);//to display where I live
     }
 };
-bio.display();
+bio.display();//calls display function in bio object
 var education = {
     "schools": [{
         "name": "Rosedale Bible College",
@@ -62,13 +56,13 @@ var education = {
         "dates": "2009–2012",
         "url": "www.grace.edu"
     }],
-    "onlineCourses": [{
+    "onlineCourses": [{//online courses is an array that you can push more courses into
         "title": "Frontend Nanodegree",
         "school": "Udacity",
         "dates": "2017",
         "url": "www.udacity.com"
     }],
-    "display": function() {
+    "display": function() {//function for displaying the education object items
         education.schools.forEach(function(school) {
             $("#education").append(HTMLschoolStart);
             var formattedSchoolName = HTMLschoolName.replace("%data%", school.name).replace("#", "https://" + school.url);
@@ -96,9 +90,9 @@ var education = {
         });
     }
 };
-education.display();
+education.display();//calls display function of education object items
 var work = {
-    "jobs": [{
+    "jobs": [{//array of places that I have worked
         "title": "Guitar Teacher",
         "employer": "Self-Employed",
         "dates": "2009-2017",
@@ -117,7 +111,7 @@ var work = {
         "description": "Roasted 10,000lbs per year of coffee for The Electric Brew",
         "location": "Goshen, Indiana"
     }],
-    "display": function() {
+    "display": function() {//displays the items from the array
         work.jobs.forEach(function(job) {
             $("#workExperience").append(HTMLworkStart);
             var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
@@ -133,7 +127,7 @@ var work = {
         });
     }
 };
-work.display();
+work.display();//calls display function in the work object
 var projects = {
     "projects": [{
         "title": "Project 1",
@@ -151,7 +145,7 @@ var projects = {
         "description": "This is a placeholder for the project that will be",
         "images": ["images/fry.jpg"], //FIXME:when I take this out things go wacko in Lint
     }],
-    "display": function() {
+    "display": function() {//function to display all the items in the project function
         projects.projects.forEach(function(project) {
             $("#projects").append(HTMLprojectStart);
             var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
@@ -169,5 +163,5 @@ var projects = {
         });
     }
 };
-projects.display();
-$("#mapDiv").append(googleMap);
+projects.display();//calls the function that displays the properties of the project object
+$("#mapDiv").append(googleMap);//this appends the google map API to the page. More code to support this is in helper.js

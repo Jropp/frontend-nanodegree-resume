@@ -22,11 +22,12 @@ h6 {
 .work-entry,
 .project-entry {
   padding: 0 5%;
+
 }
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #AF9164;
   line-height: 48px;
   display: inline;
 }
@@ -34,7 +35,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #2b2118;
   line-height: 29px;
   padding: 10px;
 }
@@ -65,7 +66,7 @@ h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #b3b6b7;
   line-height: 16px;
   float: left;
 }
@@ -73,7 +74,7 @@ h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #b3b6b7;
   line-height: 16px;
   float: right;
 
@@ -86,7 +87,7 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #2B2118;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -95,21 +96,21 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
+  color: #F7F3E3;
   line-height: 28px;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #AF9164;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #AF9164;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #AF9164;
 }
 
 .white-text {
@@ -118,13 +119,13 @@ a {
 }
 
 .gray {
-  background-color: #f3f3f3;
+  background-color: #F7F3E3;
   padding-bottom: 10px;
   clear: both;
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: #b3b6b7;
 }
 
 /* TODO: Replace with image later */
@@ -175,6 +176,11 @@ span {
   text-align: center;
 }
 
+#footerContacts {
+  background-color: #484848;
+
+}
+
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
@@ -205,6 +211,7 @@ span {
   display: block;
   height: 100%;
   margin: 0 5%;
+  border-radius: 50px;
 }
 
 #mapDiv {
