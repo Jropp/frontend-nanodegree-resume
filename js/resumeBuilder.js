@@ -39,7 +39,7 @@ var bio = {
         $("#topContacts, #footerContacts").append(formattedLocation);//to display where I live
     }
 };
-bio.display();//calls display function in bio object
+bio.display();//calls display function in bio object FIXME: this now gets moved to octopus
 var education = {
     "schools": [{
         "name": "Rosedale Bible College",
